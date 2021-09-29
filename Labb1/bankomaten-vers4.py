@@ -5,6 +5,16 @@ class Konto:
 
 kontoLista = []
 
+print("--------------------------")
+print("***TEKNIKHÖGSKOLAN-BANK***")
+print("--------------------------")
+
+print("1. Skapa konto")
+print("2. Adminstrera konto")
+print("3. Avsluta")
+
+sel = input("Ange menyval > ")
+
 
 while True:
     print("***Teknik")

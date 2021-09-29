@@ -7,6 +7,7 @@ user = {
 }
 
 found_account = False
+user_account = []
 
 print("--------------------------")
 print("***TEKNIKHÖGSKOLAN-BANK***")
@@ -23,31 +24,26 @@ while True:
     if sel == "1":
         print("Du skapar nu ett konto hos oss :)")
         nmr = int(input("Ange ett kontonummer med fyra siffror: "))
-        found_account = False
-        while nmr < 1000 or nmr > 9999:
-            nmr = int(input("Ogiltigt kontonummer..Testa igen: "))
-        user["account"] = nmr
-        found_account = True
-        if found_account == False:
-            print("Felaktigt kontonummer...testa igen")
+        while True:
+            if nmr < 1000 or nmr > 9999:
+                nmr = int(input("Ogiltigt kontonummer..Testa igen: "))
+            else:
+                nmr = user_account.append(nmr)
 
-        print("Ditt kontonummer kommer snart att visas på skärmen, \nvar snäll och skydda dina uppgifter")
-        time.sleep(2)
-        print("Kontonummer: ",user["account"])
+            print("Ditt kontonummer kommer snart att visas på skärmen, \nvar snäll och skydda dina uppgifter")
+            time.sleep(2)
+            print("Kontonummer: ",nmr)
     
     elif sel == "2":
-        nmr = int(input("Ange ett kontonummer med fyra siffror: "))
-        found_account = False
-        if nmr < 1000 or nmr > 9999:
-            nmr = int(input("Ogiltigt kontonummer..Testa igen: "))
-            user["account"] = nmr
-            found_account = True
-            if found_account == False:
-                print("Felaktigt kontonnummer...testa igen genom att trycka på 'enter' ")
-
-
+        for nmr in user_account:
+            print("Kontonummer",nmr)
+            sel = input("Välj ett av dina konton hos oss: ")
+        if sel not in user_account:
+            while True:
+                nmr = int(input("Ogiltigt kontonummer..Testa igen: "))
+                nmr = user_account.append(nmr)
             
-        else:
+        elif user_account == sel:
             print("---------------")
             print("***KONTOMENY*** - konto: ", nmr)
             print("---------------")

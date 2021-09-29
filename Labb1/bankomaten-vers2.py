@@ -72,3 +72,4 @@ def Withdraw(balance):
     print(f"Du har gjort ett uttag på {cmd} :- och har nu {new_balance} :- (SEK) på ditt konto")
 
 HuvudMeny()
+KontoMeny()
